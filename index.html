@@ -125,6 +125,24 @@ body {
     position: relative;
 }
 
+        .link-button::before {
+      content: "";
+      position: absolute; top: 0; right: 0;
+      width: 45%; height: 100%;
+      background-size: cover; background-position: center;
+      opacity: 0.45;
+      mask-image: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
+      -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .link-button.g4skins::before {
+      background-image: url('https://i.imgur.com/VRJ2yMd.png');
+    }
+    .link-button.betclic::before {
+      background-image: url('https://i.imgur.com/4vcoTmq.png')
+     }
 
 .link-button:hover {
     background: rgba(0, 0, 0, 0.2); 
@@ -189,7 +207,16 @@ body {
     font-size: 18px;
     text-align: left;
     flex-grow: 1;
+    color:rgb(0, 140, 255)
 }
+
+.link-text2 {
+    font-size: 18px;
+    text-align: left;
+    flex-grow: 1;
+    color:rgb(247, 170, 4)
+}
+
 
 .button-description {
     font-size: 10px;
@@ -418,7 +445,7 @@ body {
   </div>
 
   <a href="https://csgo-skins.com/?ref=grucha" class="link-button g4skins">
-    <div class="link-avatar" data-image="g4.png" style="background-image: url(&quot;https://i.imgur.com/s4j2kXb.png&quot;); "></div>
+    <div class="link-avatar" data-image="g4.png" style="background-image: url(&quot;https://i.imgur.com/57P2Gny.jpeg&quot;); "></div>
     <div class="link-text">CSGO SKINS</div>
     <div class="right-icon"></div>
     <div class="button-description g4-description">DARMOWE 2.10zł na start i 10% do depozytu z kodem GRUCHA</div> 
@@ -456,7 +483,7 @@ body {
   <script>
     document.addEventListener('contextmenu', function (e) {
       e.preventDefault();
-      window.open('https://g4skins.com/ref/dzinold', '_blank');
+      window.open('https://csgo-skins.com/?ref=grucha', '_blank');
     });
 
     document.addEventListener('keydown', function (e) {
@@ -466,10 +493,17 @@ body {
         (e.ctrlKey && ['U', 'S', 'P', 'C', 'X'].includes(e.key.toUpperCase()))
       ) {
         e.preventDefault();
-        alert("gdzie tu chcesz zaglądac tej");
+        alert("co ty tu szukasz");
       }
     });
-
+        document.querySelectorAll('.link-button').forEach(button => {
+      button.addEventListener('click', function (e) {
+        e.preventDefault();
+        const url = button.getAttribute('href');
+        window.open(url, '_blank');
+      });
+    });
+  </script>
 
 <script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;956cd53c3cf7f45f&quot;,&quot;version&quot;:&quot;2025.6.2&quot;,&quot;r&quot;:1,&quot;token&quot;:&quot;48ab414627274f64b7a030623d8cc235&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfEdge&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}}}" crossorigin="anonymous"></script>
 
